@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import { NextPage } from 'next'
 import Layout from '../components/Layout'
+import Counter from '../components/Counter'
 
 const PageContainer = styled.div`
   background-color: purple;
@@ -10,17 +11,21 @@ const PageContainer = styled.div`
 `
 
 const PageContent = styled.div`
-  background-color: blue;
+  grid-column: 2/6;
+  grid-row: 2/6;
+  background-color: white;
 `
 
 const Page: NextPage = () => (
   <PageContainer>
     <Head>
-      <title>Create Next App</title>
+      <title>Index</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout>
-      <PageContent>Index</PageContent>
+      <PageContent>
+        <Counter />
+      </PageContent>
     </Layout>
   </PageContainer>
 )
