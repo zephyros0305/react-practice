@@ -28,21 +28,6 @@ const Footer = styled.div`
 `
 
 const Layout: FC = (props) => {
-  const [count, setCount] = useState(0)
-  const addCount = () => {
-    setCount(count + 1)
-  }
-
-  useEffect(() => {
-    const fetchCount = async () => {
-      const count = await getCount()
-
-      setCount(count)
-    }
-
-    fetchCount()
-  }, [])
-
   return (
     <LayoutContainer>
       <Header>Header</Header>
@@ -50,9 +35,7 @@ const Layout: FC = (props) => {
         <a href="index">Index</a>
         <a href="page2">Page2</a>
       </SideNav>
-      <CountContext.Provider value={{ count: count, addCount: addCount }}>
-        {props.children}
-      </CountContext.Provider>
+      {props.children}
       <Footer>Footer</Footer>
     </LayoutContainer>
   )
