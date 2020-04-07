@@ -9,15 +9,15 @@ function MyApp({ Component, pageProps }: AppProps) {
     setCount(count + 1)
   }
 
-  //   useEffect(() => {
-  //     const fetchCount = async () => {
-  //       const count = await getCount()
+  useEffect(() => {
+    const fetchCount = async () => {
+      const count = await getCount()
 
-  //       setCount(count)
-  //     }
+      setCount(count)
+    }
 
-  //     fetchCount()
-  //   }, [])
+    fetchCount()
+  }, [])
 
   return (
     <CountContext.Provider value={{ count: count, addCount: addCount }}>

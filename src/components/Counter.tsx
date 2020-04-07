@@ -7,8 +7,8 @@ import { CountContext } from '../lib/countContext'
 const PlusButton = styled.button``
 
 const ToggleButton = styled.button``
-const Counter: FC = (props) => {
-  const ctx = useContext(CountContext)
+const Counter: FC = () => {
+  const { count, addCount } = useContext(CountContext)
 
   const [disabled, setDisabled] = useState(false)
   const handleDisabledChange = () => {
@@ -17,10 +17,10 @@ const Counter: FC = (props) => {
 
   return (
     <>
-      <PlusButton onClick={ctx.addCount} disabled={disabled}>
+      <PlusButton onClick={addCount} disabled={disabled}>
         Plus
       </PlusButton>
-      <CountViewer />
+      <div>{count}</div>
       <ToggleButton onClick={handleDisabledChange}>Toggle</ToggleButton>
     </>
   )

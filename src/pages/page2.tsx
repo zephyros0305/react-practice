@@ -7,19 +7,19 @@ import { CountContext } from '../lib/countContext'
 import CountViewer from '../components/CountViewer'
 
 const PageContainer = styled.div`
-  background-color: purple;
   margin: 0;
   padding: 5 px;
 `
 
 const PageContent = styled.div`
   background-color: white;
-  grid-column: 2/6;
+  grid-column: 2/7;
   grid-row: 2/6;
+  margin: 10px;
 `
 
 const Page: NextPage = () => {
-  const ctx = useContext(CountContext)
+  const { count } = useContext(CountContext)
 
   return (
     <PageContainer>
@@ -29,7 +29,7 @@ const Page: NextPage = () => {
       </Head>
       <Layout>
         <PageContent>
-          <CountViewer />
+          <div>{count}</div>
         </PageContent>
       </Layout>
     </PageContainer>
